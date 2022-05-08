@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply focus:outline-none;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-screen-lg px-4;
+  }
+
+  .suggestion-item {
+    @apply py-2 px-4 bg-slate-50 cursor-pointer;
+  }
+
+  .suggestion-item.active {
+    @apply bg-slate-200;
+  }
+
+  .card-result {
+    @apply rounded-md shadow-md p-4;
+  }
+}
