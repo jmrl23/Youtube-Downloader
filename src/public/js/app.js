@@ -44,6 +44,7 @@
       })
 
       stream.on('error', error => {
+        downloadContainer.remove()
         outputError(error)
       })
 
