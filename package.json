@@ -6,6 +6,7 @@
   "author": "Jomariel Gaitera <jojogaitera@gmail.com>",
   "license": "ISC",
   "scripts": {
+    "start": "node .",
     "tw:watch": "tailwindcss -i src/public/css/tailwind.css -o src/public/css/style.css --minify --watch"
   },
   "dependencies": {
