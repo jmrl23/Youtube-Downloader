@@ -68,6 +68,8 @@
         a.click()
         window.URL.revokeObjectURL(url)
 
+        socket.emit('download-complete', t, videoId)
+
         downloadContainer.remove()
         if (downloadList.childElementCount < 1) {
           showDownloadButton.classList.add('scale-0')

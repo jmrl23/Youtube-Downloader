@@ -47,6 +47,11 @@ io.of(`/${process.env.APP_NS}`).on('connection', socket => {
     }
   })
 
+  // log download complete
+  socket.on('download-complete', (t, videoId) => {
+    console.log(`${new Date().toLocaleDateString()} | Download complete (${t}): ${videoId}`)
+  })
+
   // pipe to client stream
   ss(socket).on('download', async (stream, data, callback) => {
     try {
