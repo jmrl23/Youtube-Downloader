@@ -64,10 +64,12 @@
         const a = document.createElement('a')
         const url = window.URL.createObjectURL(blob)
         a.href = url
+        info.title = info.title.replace(/[/\\?%*:|"<>]/g, '-')
         a.download = info.title + (t === 'audio' ? '.mp3' : '.mp4')
         a.click()
-        window.URL.revokeObjectURL(url)
-
+        setTimeout(() => {
+          window.URL.revokeObjectURL(url)
+        }, 100)
         socket.emit('download-complete', t, videoId)
 
         downloadContainer.remove()
