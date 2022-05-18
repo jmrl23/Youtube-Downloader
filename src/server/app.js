@@ -7,7 +7,9 @@ const minifyHTML = require('express-minify-html')
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname + '/../views'))
 app.use(
-  express.static(path.resolve(__dirname + '/../public')),
+  express.static(path.resolve(__dirname + '/../public'), {
+    maxAge: process.env.NODE_ENV !== 'production' ? 0 : 31536000
+  }),
   minifyHTML({
     override: true,
     exception_url: false,

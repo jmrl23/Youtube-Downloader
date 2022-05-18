@@ -201,6 +201,7 @@
       card.dataset.id = videoId
       
       const img = document.createElement('img')
+      img.loading = 'lazy'
       img.src = image
       img.className = 'w-full rounded-md'
 
