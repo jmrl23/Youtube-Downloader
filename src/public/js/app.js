@@ -118,7 +118,16 @@
 
   gotoTopButton.addEventListener('click', scrollToTop)
 
-  
+  window.addEventListener('beforeunload', e => {
+    console.log(downloadList.childElementCount)
+    if (downloadList.childElementCount > 0) {
+      e.preventDefault()
+      const message = 'Download list is not empty, are you sure you want to leave this page?'
+      e.returnValue = message
+      return message
+    }
+  }, { capture: true })
+
   formSearch.q.addEventListener('keydown', e => {
     const key = e.key
     if (key === 'ArrowUp' || key === 'ArrowDown') {
