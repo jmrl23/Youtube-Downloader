@@ -94,6 +94,20 @@
   })
 
   socket.on('error', outputError)
+
+  socket.on('disconnect', () => {
+    downloadList.innerHTML = ''
+    showDownloadButton.classList.add('scale-0')
+    showDownloadButton.classList.remove('scale-100')
+    const inputs = document.querySelectorAll('input, button')
+    for (const input of inputs) {
+      input.disabled = true
+    }
+    toggleDownloadModal()
+    setTimeout(() => {
+      location.reload()
+    }, 1500)
+  })
   
   formSearch.addEventListener('submit', e => {
     e.preventDefault()
@@ -119,7 +133,6 @@
   gotoTopButton.addEventListener('click', scrollToTop)
 
   window.addEventListener('beforeunload', e => {
-    console.log(downloadList.childElementCount)
     if (downloadList.childElementCount > 0) {
       e.preventDefault()
       const message = 'Download list is not empty, are you sure you want to leave this page?'
