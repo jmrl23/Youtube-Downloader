@@ -1,9 +1,10 @@
 const path = require('path')
 const express = require('express')
 const app = express()
+const compression = require('compression')
 const minifyHTML = require('express-minify-html')
 
-// configurations and middlewares
+app.use(compression())
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname + '/../views'))
 app.use(
@@ -14,12 +15,12 @@ app.use(
     override: true,
     exception_url: false,
     htmlMinifier: {
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true,
-        removeAttributeQuotes: false,
-        removeEmptyAttributes: true,
-        minifyJS: true
+      removeComments: true,
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: false,
+      removeEmptyAttributes: true,
+      minifyJS: true
     }
   })
 )
