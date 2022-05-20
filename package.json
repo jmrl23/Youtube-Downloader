@@ -4,7 +4,7 @@
   "description": "Download video from youtube in mp3 or mp4 format",
   "main": "src/server/index.js",
   "author": "Jomariel Gaitera <jojogaitera@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "start": "node .",
     "tw:watch": "tailwindcss -i src/public/css/tailwind.css -o src/public/css/style.css --minify --watch"
