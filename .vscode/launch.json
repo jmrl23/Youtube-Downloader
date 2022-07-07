@@ -15,7 +15,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "envFile": "${workspaceFolder}/dev.env",
+      "envFile": "${workspaceFolder}/src/.sandbox/dev.env",
       "type": "node"
     }
   ]
