@@ -4,6 +4,7 @@
 ![fork](https://img.shields.io/github/forks/jmrl23/Youtube-Downloader)
 ![star](https://img.shields.io/github/stars/jmrl23/Youtube-Downloader)
 ![license](https://img.shields.io/github/license/jmrl23/Youtube-Downloader)
+![Visitor](https://visitor-badge.glitch.me/badge?page_id=jmrl23.Youtube-Downloader)
 
 [Live Demo](https://jmrl-ytdl.herokuapp.com/)
 
